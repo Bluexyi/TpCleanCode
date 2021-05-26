@@ -8,6 +8,9 @@ module.exports = (sequelize, Sequelize) => {
       },
       category: {
         type: Sequelize.STRING
+      },
+      details: {
+        type: Sequelize.TEXT
       }
     });
   

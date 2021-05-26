@@ -9,11 +9,12 @@ const db = require("./app/Domaine/models");
 
 const User = db.user;
 const Product = db.product;
+const Price = db.price;
 
-/*db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: true }).then(() => {
     console.log('Drop and Resync Db');
     initial();
-});*/
+});
 
 var corsOptions = {
     origin: "*"
@@ -55,13 +56,27 @@ function initial() {
         id: 1,
         name: "Table basse",
         description: "Belle table basse",
-        category: "Meuble"
+        category: "Meuble",
+        details:"{}"
     });
 
     Product.create({
         id: 2,
         name: "Robot cuisine",
         description: "Tres utile",
-        category: "Electromenager"
+        category: "Electromenager",
+        details:"{}"
+    });
+
+    Price.create({
+        id: 1,
+        price: 4.3,
+        idProduct: 1
+    });
+
+    Price.create({
+        id: 2,
+        price: 5.6,
+        idProduct: 2
     });
 }

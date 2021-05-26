@@ -26,5 +26,10 @@ db.sequelize = sequelize;
 
 db.user = require("../models/user.model.js")(sequelize, Sequelize);
 db.product = require("../models/product.model.js")(sequelize, Sequelize);
+db.price = require("../models/price.model.js")(sequelize, Sequelize);
+
+db.price.belongsTo(db.product, {
+  foreignKey: "idProduct"
+});
 
 module.exports = db;

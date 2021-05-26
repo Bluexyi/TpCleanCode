@@ -21,6 +21,8 @@ exports.getProduct = async (req, res) => {
     var productId = +req.params.idProduct;
     const product = await ProductService.getOneProduct(productId);
 
+    //res.send(product);
 
-    res.status(200).send(product);
+    if(user.login == true) res.status(200).send(product);
+    else res.status(200).send("false");
 };
