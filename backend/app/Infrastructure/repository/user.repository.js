@@ -22,3 +22,10 @@ exports.findAll = async (req, res) => {
 
     res.status(200).send(users);
 };
+
+exports.update = async (user) => {
+    return await User.update(
+        { login: user.login },
+        { where: { id: user.id } }
+      );
+};

@@ -13,3 +13,10 @@ exports.getAllUsers = async (req, res, next) => {
 
     next();
 };
+
+exports.login = async (req, res) => {
+    const userId = +req.params.id;
+    const user = await service.update(userId);
+
+    res.send(user);
+ };

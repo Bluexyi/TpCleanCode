@@ -13,5 +13,6 @@ module.exports = function(app) {
 
   app.get("/api/user/:id", controller.getUser,service.getOneUser);
   app.get("/api/user", controller.getAllUsers,service.getAllUsers, repository.findAll);
+  app.put("/api/user/:id/login", controller.login);
   
 };

@@ -10,10 +10,10 @@ const db = require("./app/Domaine/models");
 const User = db.user;
 const Product = db.product;
 
-/*db.sequelize.sync({ force: true }).then(() => {
+db.sequelize.sync({ force: true }).then(() => {
     console.log('Drop and Resync Db');
     initial();
-});*/
+});
 
 var corsOptions = {
     origin: "*"
