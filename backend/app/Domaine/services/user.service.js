@@ -13,3 +13,9 @@ exports.getAllUsers = async (req, res, next) => {
     
     next();
 };
+
+exports.update = async (userId) => {
+    const user = await repository.findOneById(id);
+    user.login = true;
+    return await repository.update(user);
+};
